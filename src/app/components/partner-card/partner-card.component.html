@@ -1,0 +1,27 @@
+<div class="partner-list__partner">
+    <div class="partner-list__partner__card mg-right-15">
+        <div class="partner-list__partner__card__titulo">Situação cadastral do CPF</div>
+        <p>Consulta na Receita Federal</p>
+
+        <div class="partner-list__partner__card__infomation">
+            <div class="partner-list__partner__card__infomation__line">
+                <div class="partner-list__partner__card__infomation__line__icon">
+                    <i class="fas fa-user fa-lg"></i>
+                </div>
+                <div class="partner-list__partner__card__infomation__line__text">
+                    <div class="partner-list__partner__card__infomation__line__text__title-text">Nome</div>
+                    <label>{{ data.name }}</label>
+                </div>
+            </div>
+            <div class="partner-list__partner__card__infomation__line">
+                <div class="partner-list__partner__card__infomation__line__icon">
+                    <i class="far fa-check-circle"></i>
+                </div>
+                <div class="partner-list__partner__card__infomation__line__text">
+                    <div class="partner-list__partner__card__infomation__line__text__title-text">Situação do CPF</div>
+                    <label>{{ data.status.name }}</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

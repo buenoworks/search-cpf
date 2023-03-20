@@ -1,0 +1,51 @@
+<div class="home container">
+    <div class="home__form-step">
+        <ul class="home__form-step__steps">
+            <li class="home__form-step__steps__active">Início</li>
+            <li class="home__form-step__steps__text-muted">Documentos</li>
+            <li class="home__form-step__steps__text-muted">Dados cadastrais</li>
+            <li class="home__form-step__steps__text-muted">Admissão</li>
+        </ul>
+    </div>
+
+    <div class="home__search-cpf margin-container">
+        <div class="home__search-cpf__title">Informe o CPF do futuro cooperado (a)</div>
+
+        <p>
+            Se necessário, você poderá duplicar uma conta existente ou pausar e retomar este cadastro futuramente. Digite apenas os números (sem pontos ou traços). 
+        </p>
+
+        <form [formGroup]="form" (ngSubmit)="search()">
+            <div class="form-search-cpf">
+                <label for="searchCPF">CPF</label>
+                <input type="search" 
+                    id="searchCPF" 
+                    formControlName="searchCPF"
+                    placeholder="000.000.000-00" 
+                    [mask]="'000.000.000-00'" 
+                    [validation]="true"
+                    [dropSpecialCharacters]="false"
+                    [class.is-invalid]="form.get('searchCPF')?.invalid && form.get('searchCPF')?.touched">
+                <div class="invalid-feedback" *ngIf="form.get('searchCPF')?.invalid && form.get('searchCPF')?.touched">
+                    Informe um CPF válido!
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary" [disabled]="!loading && loaded && form.get('searchCPF')?.valid && form.get('searchCPF')?.value === loaded">
+                <ng-container *ngIf="!loading; else elseBlock;">
+                    Consultar por CPF
+                </ng-container>
+                <ng-template #elseBlock><i class="fas fa-spinner fa-spin"></i></ng-template>
+            </button>
+        </form>
+    </div>
+
+    <partner-list></partner-list>
+
+    <div class="home__bottom-buttons">
+        <button type="button" class="btn bt-blue" *ngIf="(partners$ | async)?.length">
+            Iniciar nova admissão
+        </button>
+        <button type="button" class="btn">Dicas para abertura de conta</button>    
+    </div>
+</div>

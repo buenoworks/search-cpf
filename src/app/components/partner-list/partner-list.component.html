@@ -1,0 +1,14 @@
+<div class="partner-list margin-container">
+    <div class="partner-list__not-found" role="alert"
+	     *ngIf="(partners$ | async)?.length === 0 && response">
+		<strong>Nenhum cooperado foi encontrado!</strong> O CPF digitado não foi encontrado na pesquisa, por favor tente novamente mais tarde!
+	</div>
+
+    <div class="flex" *ngFor="let partner of (partners$ | async)">
+        <partner-card [data]="partner"> </partner-card>
+        
+		<div class="flex" *ngFor="let account of partner.accounts">
+            <account-card [data]="account"></account-card>
+        </div>
+    </div>
+</div>

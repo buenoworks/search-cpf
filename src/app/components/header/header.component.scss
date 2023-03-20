@@ -1,0 +1,105 @@
+@import "variables";
+
+.header {
+    height: 89px;
+    width: 100%;
+    padding-left: 100px;
+    position: fixed;
+    left: 0;
+    z-index: 9;
+    background-color: $white;
+    display: grid;
+    grid-template-columns: 1fr 332px;
+    align-items: center;
+
+    &__left-text {        
+        &__title {
+            font-family: 'Exo', sans-serif;
+            font-size: 24px;
+            line-height: 32px;
+            font-weight: 700;
+            color: $gray-800;
+        }
+
+        &__breadcrumb {
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 18px;
+            color: $gray-500;
+        }
+    }
+
+    &__profile-area {
+        display: flex;
+        align-items: center;
+
+        &__notification {
+            .btn {
+                position: relative;                
+
+                > i {
+                    font-size: 28px;
+                    color: $blue;
+                }
+
+                small {
+                    position: absolute;
+                    background-color: $danger;
+                    border-radius: 50%;
+                    width: 16px;
+                    height: 16px;
+                    color: $white;
+                    font-size: 10px;
+                    line-height: 16px;
+                    text-align: center;
+                    font-weight: 700;
+                    right: 2px;
+                    top: -4px;
+                }
+            }
+        }
+
+        &__select-profile {
+            .btn {
+                font-weight: 700;
+                color: $blue;
+                font-size: 15px;
+                width: 109px;
+                height: 32px;
+                background: $white;
+                border: 1px solid $blue;
+                border-radius: 15px;
+                text-align: center;
+                line-height: 28px;
+                margin: 0 14px 0 10px;
+            }
+        }
+
+        &__avatar {
+            .btn {
+                width: 40px;
+                height: 40px;
+                overflow: hidden;
+                border-radius: 50%;
+                margin: 0;
+                padding: 0;
+                border: 1px solid $blue;
+
+                img {
+                    height: 100%;
+                }
+
+                small {
+                    position: absolute;
+                    bottom: 22px;
+                    margin: 0 0 0 -10px;
+                }
+
+                > i {
+                    font-size: 15px;
+                    color: $blue;
+                }
+            }
+        }
+    }
+}

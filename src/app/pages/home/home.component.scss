@@ -1,0 +1,157 @@
+@import "variables";
+
+.home {
+    &__form-step {
+        text-align: center;
+        margin-bottom: 30px;
+
+        &__steps {
+            width: 500px;
+            margin: auto;
+            overflow: hidden;
+            padding: 30px 0 0 0;
+
+            li {
+                width: 25%;
+                float: left;
+                position: relative;
+                text-align: center;
+                list-style-type: none;
+                font-size: 14px;
+                padding-top: 32px;
+
+                &:before, &:after {
+                    content: '';
+                    position: absolute;
+
+                }
+
+                &:before {
+                    width: 18px;
+                    height: 18px;
+                    border-radius: 50%;
+                    border: 1px solid $gray-200;
+                    background-color: $gray-200;
+                    top: 0;
+                    left: 50%;
+                    margin-left: -9px;
+                    z-index: 1;
+                }
+
+                &:after {
+                    width: 100%;
+                    height: 2px;
+                    background-color: $gray-200;
+                    top: 9px;
+                    right: 0;
+                }
+
+                &:first-child {
+                    &:after {
+                        width: 50%;
+                    }
+                }
+
+                &:last-child {
+                    &:after {
+                        width: 50%;
+                        right: initial;
+                        left: 0;
+                    }
+                }
+            }
+
+            &__active {
+                color: $blue;
+
+                &:before {
+                    border: 1px solid $blue !important;
+                    background-color: $container-color !important;
+                }
+
+                &:after {
+                    background-color: $blue !important;
+                }
+            }
+        }
+    }
+
+    &__search-cpf {
+        &__title {
+            font-size: 22px;
+        }
+
+        > p {
+            font-size: 11px;
+            color: $gray-600;
+        }
+
+        > form {
+            display: flex;
+
+            .form-search-cpf {
+                display: grid;
+                position: relative;
+
+                > label {
+                    color:  $gray-900;
+                    float: left;
+                    font-weight: 600;
+                    margin-bottom: 2px;
+                }
+
+                > input {
+                    height: 34px;
+                    width: 270px;
+                    border: 1px solid  $gray-500;
+                    border-radius: 2px;
+                    padding: 0 8px;
+                    background-color: $white;
+                }
+
+                .invalid-feedback {
+                    position: absolute;
+                    bottom: -20px;
+                    font-size: 12px;
+                    color: $danger;
+                }
+            }
+
+            .btn {
+                width: 172px;
+                height: 34px;
+                background-color: $blue;
+                border-color: $blue;
+                border-radius: 2px;
+                color: $white;
+                align-self: flex-end;
+                margin-left: 15px;
+            }
+        }
+    } 
+
+    &__bottom-buttons {
+        background-color: $white;
+        height: 78px;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        align-items: center;
+        display: flex;
+        padding: 0 0 0 24px;
+
+        .btn {
+            font-size: 16px;
+            color: $blue;
+            border: 1px solid $blue;
+            padding: 10px 20px;
+            font-weight: 600;
+
+            &.bt-blue {
+                background-color: $blue;
+                color: $white;
+                margin: 0 15px 0 0;
+            }
+        }
+    }
+}
